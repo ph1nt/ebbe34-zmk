@@ -1,0 +1,6 @@
+if SHIELD_HNQ38
+
+config ZMK_KEYBOARD_NAME
+    default "HNQ38"
+
+endif

@@ -1,0 +1,2 @@
+config SHIELD_HNQ38
+    def_bool $(shields_list_contains,HNQ38)

@@ -1,0 +1,61 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include "keymap_swedish.h"
+
+#define BAS 0
+#define NAV 1
+#define NUM 2
+#define SET 3
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+         base {
+            display-name = "Base";
+            bindings = <
+&kp Q       &kp W       &kp E      &kp R      &kp T         &kp Y      &kp U       &kp I          &kp O         &kp P
+&kp A       &kp S       &kp D      &kp F      &kp G         &kp H      &kp J       &kp K          &kp L         &kp SE_QUES
+&kp Z       &kp X       &kp C      &kp V      &kp B         &kp N      &kp M       &kp SE_COMM    &kp SE_DOT    &kp SE_EXLM
+                                   &mo NAV    &kp SPACE     &kp LSHFT  &mo NUM
+            >;
+        };
+
+        navigation {
+            display-name = "Navigation";
+            bindings = <
+&kp CAPS    &kp C_PREV  &kp C_PP   &kp C_NEXT &kp TAB       &kp HOME    &kp PG_DN    &kp PG_UP     &kp END     &kp DEL
+&sk LGUI    &sk LALT    &sk LSHFT  &sk LCTRL  &kp ESC       &kp LEFT    &kp DOWN     &kp UP        &kp RIGHT   &kp BSPC
+&kp LC(Z)   &kp LC(X)   &kp LC(C)  &kp LC(V)  &key_repeat   &key_repeat &kp C_VOL_DN &kp C_VOL_UP  &kp PSCRN   &kp RET
+                                   &trans     &trans        &trans      &trans
+            >;
+        };
+
+        numbers {
+            display-name = "Numbers";
+            bindings = <
+&kp N1      &kp N2       &kp N3    &kp N4       &kp N5       &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+&sk LGUI    &sk LALT     &sk LSHFT &sk LCTRL    &kp F11      &kp F12     &sk LCTRL   &sk LSHFT   &sk LALT    &sk LGUI
+&kp F1      &kp F2       &kp F3    &kp F4       &kp F5       &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+                                   &trans       &trans       &trans      &trans
+            >;
+        };
+
+        settings {
+            display-name = "Settings";
+            bindings = <
+&none &none &none &none &none &none        &none        &none        &none        &none
+&none &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+&none           &none           &none &none           &none           &none        &none        &bt BT_CLR   &none        &none
+                                &none           &trans          &trans          &none
+            >;
+        };
+    };
+};

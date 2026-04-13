@@ -1,6 +1,0 @@
-name: zmk-keyboard-hnq38
-version: 0.1.0
-description: ZMK configuration for the HNQ38 keyboard
-build:
-  settings:
-    board_root: .

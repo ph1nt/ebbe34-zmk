@@ -1,0 +1,9 @@
+file_format: "1"
+id: hnq38
+name: HNQ38
+type: shield
+url: https://github.com/ph1nt/ebbe34-zmk.git
+requires: [pro_micro]
+features:
+  - keys
+  - display
